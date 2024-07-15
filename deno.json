@@ -1,5 +1,11 @@
 {
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
     "@std/cli": "jsr:@std/cli@^0.224.7"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "verbatimModuleSyntax": true
   }
 }
