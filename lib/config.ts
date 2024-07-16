@@ -1,10 +1,12 @@
-type Route = {
-  template: string;
-};
+import { array, assert, type Infer, object, string } from "@superstruct/core";
 
-type Config = {
-  routes: Route[];
-};
+const Config = object({ routes: array(object({ template: string() })) });
+type Config = Infer<typeof Config>;
+
+export function parseConfig(value: unknown): Config {
+  assert(value, Config);
+  return value;
+}
 
 const defaultConfig: Config = {
   routes: [],
