@@ -1,22 +1,24 @@
 import { parseArgs } from "@std/cli";
+import { serveFile } from "@std/http";
+import { dirname, resolve } from "@std/path";
 
 const args = parseArgs(Deno.args);
 
-const { config: c } = args;
-const inputFile = typeof c === "string" ? c : "./src/main.ts";
+async function main() {
+  const configFile = typeof args.config === "string"
+    ? args.config
+    : "./src/main.ts";
 
-(async () => {
-  const { config } = await import(await Deno.realPath(inputFile));
-  console.log({ config });
-})();
+  const pathToConfigFile = resolve(configFile);
+  const basePath = dirname(pathToConfigFile);
 
-type Config = {
-  a: string;
-};
+  const { config } = await import(pathToConfigFile);
+  console.log("Config loaded:", config);
 
-export function createConfig(opts: Partial<Config>): Config {
-  return {
-    a: "fallback",
-    ...opts,
-  };
+  Deno.serve((req) => {
+    const template = resolve(basePath, config.routes[0].template);
+    return serveFile(req, template);
+  });
 }
+
+main();

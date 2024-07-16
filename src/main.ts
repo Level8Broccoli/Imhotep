@@ -1,5 +1,9 @@
-import { createConfig } from "../lib/cli.ts";
+import { createConfig } from "../lib/config.ts";
 
 export const config = createConfig({
-  a: "override",
+  routes: [
+    {
+      template: "templates/index.html",
+    },
+  ],
 });

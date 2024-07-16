@@ -1,7 +1,9 @@
 {
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
   "imports": {
-    "@std/cli": "jsr:@std/cli@^0.224.7"
+    "@std/cli": "jsr:@std/cli@^0.224.7",
+    "@std/http": "jsr:@std/http@^0.224.5",
+    "@std/path": "jsr:@std/path@^1.0.0"
   },
   "compilerOptions": {
     "strict": true,
