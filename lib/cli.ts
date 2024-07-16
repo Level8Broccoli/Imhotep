@@ -2,11 +2,11 @@ import { parseArgs } from "@std/cli";
 
 const args = parseArgs(Deno.args);
 
-const firstArg = args._[0];
-const inputFile = typeof firstArg === "string" ? firstArg : "./index.ts";
+const { config: c } = args;
+const inputFile = typeof c === "string" ? c : "./src/main.ts";
 
 (async () => {
-  const { config } = await import(inputFile);
+  const { config } = await import(await Deno.realPath(inputFile));
   console.log({ config });
 })();
 
