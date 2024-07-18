@@ -1,6 +1,6 @@
-import { createConfig } from "../lib/config.ts";
+import { defineProject } from "../lib/config.ts";
 
-export const config = createConfig({
+export const config = defineProject({
   routes: [
     {
       template: "templates/index.html",
