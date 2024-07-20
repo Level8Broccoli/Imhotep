@@ -5,6 +5,7 @@ export function Layout(): JSX.Element {
     <>
       <head>
         <title>Imhotep</title>
+        <link rel="stylesheet" href="/_/vendor/bulma.min.css" />
       </head>
       <body>
         <script type="module" src="/_/client/dashboard.js" defer />

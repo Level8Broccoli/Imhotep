@@ -24,6 +24,11 @@ dashboard.get(
   serveStatic({ path: "./lib/client/dashboard.js" }),
 );
 
+dashboard.get(
+  "/vendor/bulma.min.css",
+  serveStatic({ path: "./lib/vendor/bulma.min.css" }),
+);
+
 dashboard.get("*", (c) => {
   if (c.req.path === "/_") {
     return c.redirect("/_/");
