@@ -6,11 +6,14 @@
     "@std/cli": "jsr:@std/cli@^1.0.0-rc.1",
     "@std/http": "jsr:@std/http@^1.0.0-rc.1",
     "@std/path": "jsr:@std/path@^1.0.0",
-    "@superstruct/core": "jsr:@superstruct/core@^2.0.2"
+    "@superstruct/core": "jsr:@superstruct/core@^2.0.2",
+    "#/": "./"
   },
   "compilerOptions": {
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "jsx": "precompile",
+    "jsxImportSource": "@hono/hono/jsx"
   }
 }
