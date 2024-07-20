@@ -2,6 +2,7 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@hono/hono@^4.5.1": "jsr:@hono/hono@4.5.1",
       "jsr:@std/assert@^1.0.0": "jsr:@std/assert@1.0.0",
       "jsr:@std/cli@^1.0.0-rc.1": "jsr:@std/cli@1.0.0-rc.5",
       "jsr:@std/cli@^1.0.0-rc.5": "jsr:@std/cli@1.0.0-rc.5",
@@ -16,6 +17,9 @@
       "jsr:@superstruct/core@^2.0.2": "jsr:@superstruct/core@2.0.2"
     },
     "jsr": {
+      "@hono/hono@4.5.1": {
+        "integrity": "459748ed4d4146c6e4bdff0213ff1ac44749904066ae02e7550d6c7f28c9bc4c"
+      },
       "@std/assert@1.0.0": {
         "integrity": "0e4f6d873f7f35e2a1e6194ceee39686c996b9e5d134948e644d35d4c4df2008",
         "dependencies": [
@@ -66,6 +70,7 @@
   "remote": {},
   "workspace": {
     "dependencies": [
+      "jsr:@hono/hono@^4.5.1",
       "jsr:@std/assert@^1.0.0",
       "jsr:@std/cli@^1.0.0-rc.1",
       "jsr:@std/http@^1.0.0-rc.1",
